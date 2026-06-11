@@ -49,17 +49,17 @@ Sign in with your Ecom North Claude account.
 Our hosted lead-database server. It wraps Apollo (paid lead data), StoreLeads (free store database), Emailable (email verification), and our shared outreach history (so two people never cold-email the same brand twice).
 
 - This is a **hosted connector** — there is nothing to install on your machine.
-- To get access: ask **Li** (li@ecomnorth.com) to share the Master Leads DB connector with your claude.ai account. You add it under **claude.ai → Settings → Connectors**, then sign in when prompted.
+- To get access: ask your team admin to share the Master Leads DB connector with your claude.ai account. You add it under **claude.ai → Settings → Connectors**, then sign in when prompted.
 - Full details: [`docs/master-leads-db.md`](docs/master-leads-db.md)
 
 ### 3. GetSales connector
 Our outreach-sending platform (LinkedIn + email sequences).
 
-- Also a hosted connector — add it in **claude.ai → Settings → Connectors** (ask Li for the connector if you don't see it).
-- You need a seat on the GetSales team (**Nic's Team**) — ask Nic or Li.
+- Also a hosted connector — add it in **claude.ai → Settings → Connectors** (ask your team admin for the connector if you don't see it).
+- You need a seat on the company GetSales team — ask your team admin.
 
 ### 4. NotebookLM skill (for the cold-email best-practices stage)
-- Copy the `notebooklm` skill folder into `~/.claude/skills/` (ask Li for it — it's a separate skill, not in this repo).
+- Copy the `notebooklm` skill folder into `~/.claude/skills/` (ask your team admin for it — it's a separate skill, not in this repo).
 - First use requires a one-time Google login: a browser window opens, you sign in with your Ecom North Google account.
 - If you skip this, the tool still works — it just writes campaign copy from Claude's own judgment instead of our curated notebook, and tells you it did so.
 
@@ -91,7 +91,7 @@ Just type what you want, in plain English:
 
 Claude will ask anything it still needs (lead count, revenue band, sender profile, etc.), then walk the pipeline with a checkpoint at each stage.
 
-**Choosing the sender:** when it asks which GetSales sender profile to use, you can pick from the list it shows or just type the person's name (e.g. "use Coeli").
+**Choosing the sender:** when it asks which GetSales sender profile to use, you can pick from the list it shows or just type the person's name (e.g. "use Alex's profile").
 
 ---
 
@@ -121,13 +121,13 @@ A typical 100-lead pull costs **a few dollars**. Claude checks the team's daily 
 
 | Problem | Fix |
 |---|---|
-| "Team selection required" from GetSales | Normal — Claude selects Nic's Team automatically. If you're on multiple teams it will ask. |
+| "Team selection required" from GetSales | Normal — Claude selects your GetSales team automatically. If you're on multiple teams it will ask. |
 | Sender shows `email:error` when campaign is built | That sender's mailbox is disconnected in GetSales. Reconnect it there (Settings → Email accounts), or run LinkedIn-only. |
 | NotebookLM asks for login / fails | Run the one-time Google login (Claude will offer it), or tell Claude "proceed without the notebook". |
 | "I don't see the Master Leads DB tools" | The connector isn't added to your claude.ai account — see Prerequisites #2. |
 | Very few leads come back | Normal for narrow filters. Claude will show you exactly which filter is constraining and offer to relax it. |
 
-Anything else: ask Li, or just tell Claude what went wrong — the skill is built to explain itself.
+Anything else: ask your team admin, or just tell Claude what went wrong — the skill is built to explain itself.
 
 ---
 
@@ -144,6 +144,6 @@ docs/EVALS.md                 evaluation results (19/19 with skill vs 8/19 basel
 
 ---
 
-## Privacy note
+## Note on access
 
-This repository is **private** — visible only to invited Ecom North team members, and not indexed by search engines. Keep it that way: it references our internal tooling and processes. Don't fork it to a public account.
+This repo contains the skill's instructions only — no credentials, no lead data, no API keys. The skill is useless without access to the team's private connectors (Master Leads DB, GetSales), which are granted separately by the team admin.

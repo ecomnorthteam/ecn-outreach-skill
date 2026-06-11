@@ -6,7 +6,7 @@ The Master Leads DB is Ecom North's hosted lead-intelligence server. It is a **r
 
 ## Getting access
 
-1. Ask **Li (li@ecomnorth.com)** to share the Master Leads DB connector with your claude.ai account / the Ecom North workspace.
+1. Ask your team admin to share the Master Leads DB connector with your claude.ai account / the Ecom North workspace.
 2. In **claude.ai → Settings → Connectors**, the connector appears as **"Master Leads DB"**. Add/enable it.
 3. First use triggers a sign-in (OAuth). Use your Ecom North account.
 4. Verify: in Claude Code, ask "check the daily lead budget" — you should get a spend-vs-cap answer, not an error.
@@ -29,7 +29,7 @@ Everything found is automatically saved into our shared master database, so each
 
 - **Always log outreach.** The ecn-outreach skill does this automatically (`log_outreach` after enrolling leads in GetSales). If you push leads to any sending tool manually, log it — otherwise teammates will re-contact the same brands.
 - **Don't bulk-reveal Apollo emails casually** — each reveal costs credits. The skill asks before paid steps; keep that habit in manual use.
-- Budget caps are enforced server-side per day. If a run stops with a budget message, that's the guardrail working — talk to Li to raise it.
+- Budget caps are enforced server-side per day. If a run stops with a budget message, that's the guardrail working — talk to your team admin to raise it.
 
 ## Field-tested API quirks (for anyone using the tools manually)
 
