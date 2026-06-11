@@ -45,12 +45,12 @@ You need all four of these before the skill will work end-to-end:
 The Anthropic CLI/desktop app. Install: https://claude.com/claude-code
 Sign in with your Ecom North Claude account.
 
-### 2. Master Leads DB connector (claude.ai)
-Our hosted lead-database server. It wraps Apollo (paid lead data), StoreLeads (free store database), Emailable (email verification), and our shared outreach history (so two people never cold-email the same brand twice).
+### 2. Master Leads DB MCP server
+The lead-database layer. It wraps Apollo (paid lead data), StoreLeads (store database), Emailable (email verification), and a shared outreach history (so two people never cold-email the same brand twice). Two ways to get it:
 
-- This is a **hosted connector** — there is nothing to install on your machine.
-- To get access: ask your team admin to share the Master Leads DB connector with your claude.ai account. You add it under **claude.ai → Settings → Connectors**, then sign in when prompted.
-- Full details: [`docs/master-leads-db.md`](docs/master-leads-db.md)
+- **Ecom North team members:** it's a hosted connector — nothing to install. Ask your team admin to share it, then add it under **claude.ai → Settings → Connectors** and sign in when prompted.
+- **Everyone else (or self-hosting):** run the open-source edition with your own API keys — **https://github.com/ecomnorthteam/master-leads-db-mcp** — 5-minute install, instructions in that README.
+- Full details either way: [`docs/master-leads-db.md`](docs/master-leads-db.md)
 
 ### 3. GetSales connector
 Our outreach-sending platform (LinkedIn + email sequences).

@@ -1,10 +1,11 @@
 # Master Leads DB — Connector Guide
 
-The Master Leads DB is Ecom North's hosted lead-intelligence server. It is a **remote MCP connector** — it runs in the cloud, there is nothing to download or install on your machine. You connect your claude.ai account to it once, and the tools appear in every Claude Code session automatically.
+The Master Leads DB is the lead-intelligence layer behind this skill. Two editions:
 
-> Note: the server's source code is not in this repo — it's maintained centrally. This doc covers getting access and what's inside.
+1. **Hosted connector (Ecom North team)** — runs in the cloud, nothing to install; connect your claude.ai account once and the tools appear in every Claude Code session. Covered below.
+2. **Self-hosted community edition (everyone else)** — open source, bring your own Apollo/StoreLeads/Emailable API keys, data stays in a local SQLite file: **https://github.com/ecomnorthteam/master-leads-db-mcp**. Install instructions live in that repo's README; the tool surface matches what this skill expects.
 
-## Getting access
+## Getting access (hosted edition)
 
 1. Ask your team admin to share the Master Leads DB connector with your claude.ai account / the Ecom North workspace.
 2. In **claude.ai → Settings → Connectors**, the connector appears as **"Master Leads DB"**. Add/enable it.
